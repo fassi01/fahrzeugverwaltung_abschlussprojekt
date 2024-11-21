@@ -1,0 +1,54 @@
+.messsageBox {
+	padding-bottom: 10px;
+	text-align: left;
+
+}
+
+.messageBoxOk {
+	border: 2px solid;
+	border-color: #9fcf9f;
+	border-radius: 5px;
+	color: #005f00;
+	background: url("/img/icons/checkMark.png") 8px no-repeat;
+	background-color: #dfffdf;
+	margin: auto;
+	margin-bottom: 10px;
+	padding: 5px 5px 5px 40px;
+	font-family: "Open Sans", "Segoe UI", Tahoma, sans-serif;
+	font-size: 14px;
+	font-weight: 600;
+	width: 1060px;
+	box-shadow: 10px 20px 15px silver;
+}
+
+.messageBoxError {
+	border: 2px solid;
+	border-color: #dd0000;
+	border-radius: 5px;
+	color: #550000;
+	background: url("/img/icons/errorMark.png") 8px no-repeat;
+	background-color: #ffe3e3;
+	margin: auto;
+	margin-bottom: 10px;
+	padding: 5px 5px 5px 40px;
+	font-family: "Open Sans", "Segoe UI", Tahoma, sans-serif;
+	font-size: 14px;
+	font-weight: 600;
+	width: 1060px;
+	box-shadow: 10px 20px 15px silver;
+}
+
+.messageBoxWarning {
+	border: 2px solid;
+	border-color: #ffa600;
+	border-radius: 5px;
+	color: #550000;
+	background: url("/img/icons/warningMark.png") 8px no-repeat;
+	background-color: #ffe6b8;
+	margin: 10px 0 0 0;
+	padding: 5px 5px 5px 40px;
+	font-family: "Open Sans", "Segoe UI", Tahoma, sans-serif;
+	font-size: 14px;
+	font-weight: 600;
+
+}

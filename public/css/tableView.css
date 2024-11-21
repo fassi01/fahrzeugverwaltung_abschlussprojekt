@@ -1,0 +1,527 @@
+.tableWrapper{	
+	margin: 20px 0;
+}
+
+.tableMenu{
+	
+}
+
+.maxRowsPerPage{	
+	font-size: 14px;
+	font-weight: 400;		
+	float: left;
+}
+
+.totalEntriesFound{	
+	float: left;
+	padding-left: 10px;	
+}
+
+.quickSearch{	
+	float: right;
+}
+
+.tableView{
+	overflow-x:auto;
+	clear: both;
+	padding-top: 10px;
+	text-align:left;
+	box-shadow: 10px 20px 15px silver;
+	border-radius: 7px 7px 7px 7px;   	
+}
+
+.styled-table {
+    border-collapse: collapse;    	
+	font-size: 14px;
+	font-weight: 400;       
+	border-radius: 7px 7px 7px 7px;
+	overflow: hidden;    
+	
+}
+
+.styled-table thead tr {
+    background-color: #004c97;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;    
+}
+
+.styled-table tbody{
+	border-bottom: 2px solid #004c97;
+}
+
+.tableView2{
+	overflow-x:auto;
+	clear: both;
+	padding-top: 10px;
+	text-align:left;
+	box-shadow: 10px 20px 15px silver;
+	border-radius: 7px 7px 7px 7px;   	
+}
+
+.styled-table2 {
+    border-collapse: collapse;    	
+	font-size: 14px;
+	font-weight: 400;       
+	border-radius: 7px 7px 7px 7px;
+	overflow: hidden;    
+	
+}
+
+.styled-table2 thead tr {
+    background-color: #004c97;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table2 th,
+.styled-table2 td {
+    padding: 12px 15px;
+}
+
+.styled-table2 tbody tr {
+    border-bottom: 1px solid #dddddd;    
+}
+
+.styled-table2 tbody{
+	border-bottom: 2px solid #004c97;
+}
+
+.tableTrOdd{
+	background-color: white;	
+}
+
+.tableTrOdd:hover{
+	cursor: pointer;
+	background-color: #CAE4FD;	
+}
+
+.tableTrEven{
+	background-color: #f3f3f3;
+}
+
+.tableTrEven:hover{
+   	cursor: pointer;
+	background-color: #CAE4FD;	
+}
+
+.tableTr2Odd{
+	background-color: white;	
+}
+
+.tableTr2Odd:hover{	
+	background-color: #CAE4FD;	
+}
+
+.tableTr2Even{
+	background-color: #f3f3f3;
+}
+
+.tableTr2Even:hover{   	
+	background-color: #CAE4FD;	
+}
+
+
+
+.imgEdit{
+	height: 24px;
+	width: 24px;
+}
+
+.imgAddItemList{
+	height: 24px;
+	width: 24px;
+}
+
+.imgRemoveItemList{
+	height: 24px;
+	width: 24px;	
+}
+
+.tablePager{
+	padding-top:5px;	
+}
+
+.tablePagerBody{
+	display: inline-block;
+}
+
+.divPager, .divPagerBackFirst, .divPagerBack, .divPagerForward, .divPagerForwardLast{
+	float:left;	
+	color: white;
+	background: #004c97;
+	margin:2px;
+	padding:5px 5px 5px 5px;
+	border-radius: 2px;
+}
+
+.divPager:hover, .divPagerBackFirst:hover, .divPagerBack:hover, .divPagerForward:hover, .divPagerForwardLast:hover{
+	cursor: pointer;
+	background: #0280FF;
+}
+
+.divPagerActive{
+	float:left;	
+	color: white;
+	background: #0280FF;
+	margin:2px;
+	padding:5px 5px 5px 5px;
+	border-radius: 2px;	
+}
+
+.divPagerActive:hover{
+	cursor: pointer;
+}
+
+.divPagerMore{
+	float:left;	
+	color: white;
+	background: #004c97;
+	margin:2px;
+	padding:5px 5px 5px 5px;
+	border-radius: 2px;
+}
+
+.divPagerMore{
+	cursor:default;
+}
+
+.thHeader:hover{	
+	cursor:pointer;		
+}
+
+.thHeader2:hover{	
+	cursor:pointer;		
+}
+
+.thHeaderText{
+	float:left;	
+}
+
+.thImgSort{
+	float:left;
+}
+
+.imgSort{	
+	height: 20px;
+	width: 20px;
+}
+
+.clearFloat{
+	clear: both;
+}
+
+
+.searchOptionsBody{
+	font-size: 14px;
+	font-weight: 600;		
+	text-align: left;
+	padding-bottom: 15px;
+}
+
+.searchOptionsHeader{
+	color: #004C97;
+	border-bottom: 2px solid;
+	
+}
+
+.searchOptions{
+	display:none;
+}
+
+.searchOptionsBlock1{
+	float: left;
+	padding-right: 50px;	
+}
+
+.searchOptionsBlock2{
+	float: left;	
+}
+
+.searchOptionsHeaderText{
+	text-align: left;
+	float:left;
+}
+
+.searchOptionsHide{		
+	text-align: right;	
+}
+
+.searchOptionText{
+	background-color:#f1f3f4;
+	margin-top: 5px;
+	border: 1px solid #DDDFE0;	
+	border-radius: 2px;
+	height:20px;	 
+}
+
+.searchOptionText:focus{
+	outline: none !important; 	
+}
+
+.searchOptionOperator{
+	width:100px;
+	height:25px;
+	border: 1px solid #ccc;	
+	border-radius: 2px;	
+}
+
+.searchOptionOperator:focus{
+	outline: none !important;
+	box-sizing: border-box;
+	border: 1px solid #004c97 !important;
+}
+
+.searchOptionOperator:hover{
+	outline: none !important;
+	box-sizing: border-box;
+	border: 1px solid #004c97 !important;
+}
+
+
+.searchOptionValue{
+	width: 150px;
+	height:21px;
+	border: 1px solid #ccc;	
+	border-radius: 2px;	
+
+}
+
+.searchOptionValue:focus{	
+	outline: none !important;	
+	border: 1px solid #004c97 !important;
+}
+
+.searchOptionValue:hover{
+	outline: none !important;
+	border: 1px solid #004c97 !important;
+}
+
+
+.searchOptionValueSel{
+	width: 157px;
+	height:25px;
+	border: 1px solid #ccc;	
+	border-radius: 2px;	
+
+}
+
+.searchOptionValueSel:focus{
+	outline: none !important;
+	box-sizing: border-box;
+	border: 1px solid #004c97 !important;
+}
+
+.searchOptionValueSel:hover{
+	outline: none !important;
+	box-sizing: border-box;
+	border: 1px solid #004c97 !important;
+}
+
+
+.quickSearchInput{
+	width: 150px;
+	height:21px;
+	border: 1px solid #ccc;	
+	border-radius: 2px;		
+}
+
+.quickSearchInput:focus{
+	outline: none !important;	
+	border: 1px solid #004c97 !important;
+}
+
+.quickSearchInput:hover{
+	outline: none !important;	
+	border: 1px solid #004c97 !important;
+}
+
+.maxRows{
+	height:25px;
+	border: 1px solid #ccc;	
+	border-radius: 2px;		
+}
+
+.maxRows:focus{
+	outline: none !important;	
+	border: 1px solid #004c97 !important;
+}
+
+.maxRows:hover{
+	outline: none !important;	
+	border: 1px solid #004c97 !important;
+}
+
+.searchOptionsButtonSearch{
+	width: 120px;
+	height: 30px;
+	color:white;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: 600;
+	border-radius: 5px;
+	box-sizing: border-box;
+	border: 2px solid #004c97;
+	background: url("/img/search.png") 5px no-repeat #004c97;
+	margin-top: 10px;
+	padding-left: 20px;
+	float:left;
+}
+
+.searchOptionsButtonSearch:hover{
+	border: 2px solid #0280FF;
+	background: url("/img/search.png") 5px no-repeat #0280FF;	
+}
+
+.searchOptionsButtonUndo{
+	width: 140px;
+	height: 30px;
+	color:white;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: 600;
+	border-radius: 5px;
+	box-sizing: border-box;
+	border: 2px solid #004c97;
+	background: url("/img/undo.png") 5px no-repeat #004c97;
+	margin-top: 10px;
+	margin-left: 20px;
+	padding-left: 25px;
+}
+
+.searchOptionsButtonUndo:hover{
+	border: 2px solid #0280FF;
+	background: url("/img/undo.png") 5px no-repeat #0280FF;	
+}
+
+.viewButtonsRight{
+	text-align:right;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+.viewButtonsLeft{
+	float:left;
+	text-align:left;
+	margin-bottom: 10px;
+}
+
+.inpRadioList{	
+	text-align: center;
+}
+
+.inputAboveTable{
+	padding-top: 20px;
+	padding-bottom: 10px;
+}
+
+.inputLabelAboveTable{
+	text-align: left;
+	font-size: 16px;
+	font-weight: 600;	
+	display:block;
+}
+
+.inputFieldAboveTable{
+	display:block;
+	font-size: 14px;
+	border-radius: 2px;	
+	border: 1px solid #ccc;	
+	height:30px;
+	width: 300px;
+	margin-top: 5px;	
+}
+
+.inputFieldAboveTable:focus{
+	outline: none !important;	
+	border: 1px solid #004c97 !important;
+}
+
+.inputFieldAboveTable:hover{
+	outline: none !important;	
+	border: 1px solid #004c97 !important;
+}
+
+.inputFieldAboveTableReadOnly{
+	display:block;
+	background-color: #f1f3f4;
+	font-size: 14px;
+	border-radius: 2px;	
+	border: 1px solid #ccc;	
+	height:30px;
+	width: 300px;
+	margin-top: 5px;	
+}
+
+.inputFieldAboveTableReadOnly:focus{
+	outline: none !important;	
+	border: 1px solid #004c97 !important;
+}
+
+.inputFieldAboveTableReadOnly:hover{
+	outline: none !important;	
+	border: 1px solid #004c97 !important;
+}
+
+
+.inputFieldAboveTableInvisible{
+	display:none;
+}
+
+.inputFieldAboveTableValError{
+	outline: none !important;	
+	display:block;
+	background-color: #fef0f1;
+	font-size: 14px;
+	border-radius: 2px;	
+	border: 1px solid #f25255;	
+	height:30px;
+	width: 300px;
+	margin-top: 5px;
+}
+
+.inputFieldAboveTableValErrorText{
+	color: red;	
+	text-align: left;
+}
+
+
+.styled-table-total {
+    border-collapse: collapse;    	
+	font-size: 14px;
+	font-weight: 400;       
+	border-radius: 7px 7px 7px 7px;
+	overflow: hidden;    
+	
+}
+
+.styled-table-total thead tr {
+    background-color: #004c97;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table-total th,
+.styled-table-total td {
+    padding: 12px 10px;	
+	text-align: left;
+	font-weight: bold;
+}
+
+.styled-table-total tbody tr {
+    border-bottom: 1px solid #dddddd;    
+}
+
+.styled-table-total tbody{
+	border-bottom: 2px solid #004c97;
+}
+
+

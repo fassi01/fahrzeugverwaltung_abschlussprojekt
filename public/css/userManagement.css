@@ -1,0 +1,358 @@
+/* user_list_view.php */
+
+.viewBodyUserList{	
+	padding-top:5px;
+	padding-right:30px;
+	padding-left:30px;
+	padding-bottom:40px;	
+}
+
+.userListCreateUserButton{
+	width: 170px;
+	height: 30px;
+	color:white;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: 600;
+	border-radius: 5px;
+	box-sizing: border-box;
+	border: 2px solid #004c97;
+	background: url("/img/addItem.png") 5px no-repeat #004c97;
+	margin-top:10px;
+	padding-left:20px;	
+}
+
+.userListCreateUserButton:hover{
+	border: 2px solid #0280FF;
+	background: url("/img/addItem.png") 5px no-repeat #0280FF;	
+}
+
+/* user_view.php */
+
+.viewBodyUser{
+	padding-top:5px;
+	padding-right:30px;
+	padding-left:30px;
+	padding-bottom:40px;
+}
+
+.inputFieldUser{
+	display:block;
+	font-size: 14px;
+	border-radius: 2px;	
+	border: 1px solid #ccc;	
+	height:30px;
+	width: 300px;
+	margin-top: 5px;	
+}
+
+.inputFieldUser:focus{
+	outline: none !important;	
+	border: 1px solid #004c97 !important;	
+}
+
+.inputFieldUser:hover{
+	outline: none !important;	
+	border: 1px solid #004c97 !important;	
+}
+
+.inputFieldUserReadOnly{
+	display:block;
+	background-color: #f1f3f4;
+	font-size: 14px;
+	border-radius: 2px;	
+	border: 1px solid #ccc;	
+	height:30px;
+	width: 300px;
+	margin-top: 5px;	
+}
+
+.inputFieldUserReadOnly:focus{
+	outline: none !important;	
+	border: 1px solid #004c97 !important;
+}
+
+.inputFieldUserReadOnly:hover{
+	outline: none !important;	
+	border: 1px solid #004c97 !important;
+}
+
+.inputLabelUser{
+	text-align: left;
+	font-size: 14px;
+	font-weight: 600;
+	display:flex;
+	flex-direction:column;	
+}
+
+.inputFieldUserValError{
+	outline: none !important;
+	font-size: 14px;
+	border-radius: 2px;	
+	background-color:#fef0f1;
+	box-sizing: border-box;
+	border: 1px solid #f25255;	
+	height:30px;
+	width: 300px;
+}
+
+.inputValidationUserText{
+	color: red;	
+	text-align: left;
+}
+
+.viewHeaderH2 h2{
+	color: white;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 0 0 20px;
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.viewHeaderH2 {
+    background: #004C97;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.userInfoBlock{
+	float:left;
+	margin-right:30px;
+	box-shadow: 5px 5px 20px silver;
+	border-radius: 10px 10px 10px 10px;	
+	margin-bottom: 20px;
+}
+
+.userInfoBody{
+	border-radius: 0px 0px 10px 10px;	
+	padding:20px;		
+}
+
+.userPasswordChangeBlock{
+	float:left;	
+	margin-bottom: 20px;
+	box-shadow: 5px 5px 20px silver;
+	border-radius: 10px 10px 10px 10px;
+}
+
+.userPasswordChangeBody{
+	border-radius: 0px 0px 10px 10px;	
+	padding:20px;			
+}
+
+.userAuthGroupBlock{
+	float:left;
+	box-shadow: 5px 5px 20px silver;
+	border-radius: 10px 10px 10px 10px;
+}
+
+.userAuthGroupBody{
+	border-radius: 0px 0px 10px 10px;	
+	padding:20px;			
+}
+
+.inputUserBox{
+	padding-bottom: 5px;
+}
+
+
+.userSelectOption{
+	width: 300px;
+	height: 30px;
+	border: 1px solid #ccc;	
+	border-radius: 2px;	
+}
+
+.userSelectOptionValError{
+	width: 300px;
+	height: 30px;
+	border: 1px solid #f25255;
+	background-color:#fef0f1;
+	border-radius: 2px;	
+}
+
+.userSelectOption:focus{
+	outline: none !important;
+	box-sizing: border-box;
+	border: 1px solid #004c97 !important;
+}
+
+.userSelectOption:hover{
+	outline: none !important;
+	box-sizing: border-box;
+	border: 1px solid #004c97 !important;
+}
+
+.userSelectOptionReadOnly{
+	width: 300px;
+	height: 30px;
+	border: 1px solid #ccc;	
+	border-radius: 2px;
+	background-color: #f1f3f4;	
+}
+
+.userSelectOptionReadOnly:focus{
+	outline: none !important;
+	box-sizing: border-box;
+	border: 1px solid #004c97 !important;
+}
+
+.userSelectOptionReadOnly:hover{
+	outline: none !important;
+	box-sizing: border-box;
+	border: 1px solid #004c97 !important;
+}
+
+
+
+/* user_auth_role_list_view.php */
+.viewBodyUserAuthRoleList{
+	padding-top:5px;
+	padding-right:30px;
+	padding-left:30px;
+	padding-bottom:10px;
+	width: 600px;	
+}
+
+.styled-table-UserAuthRoleList{
+	width:600px;
+}
+
+.authGroupImg{
+	background: url("/img/authGroup.png") 4px no-repeat;	
+}
+
+.authRoleListCreateRoleButton{
+	width: 250px;
+	height: 30px;
+	color:white;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: 600;
+	border-radius: 5px;
+	box-sizing: border-box;
+	border: 2px solid #004c97;
+	background: url("/img/addItem.png") 5px no-repeat #004c97;
+	margin-top:10px;
+	padding-left:20px;	
+}
+
+.authRoleListCreateRoleButton:hover{
+	border: 2px solid #0280FF;
+	background: url("/img/addItem.png") 5px no-repeat #0280FF;	
+}
+
+
+/* user_auth_role_view.php */
+
+.viewBodyUserAuthRole{
+	padding-top:5px;
+	padding-right:30px;
+	padding-left:30px;
+	padding-bottom:40px;
+	
+}
+
+.userAuthRoleSaveButton{
+	width: 170px;
+	height: 30px;
+	color:white;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: 600;
+	border-radius: 5px;
+	box-sizing: border-box;
+	border: 2px solid #004c97;
+	background: url("/img/save.png") 5px no-repeat #004c97;
+	margin-top:10px;
+	padding-left:20px;	
+}
+
+.userAuthRoleSaveButton:hover{
+	border: 2px solid #0280FF;
+	background: url("/img/save.png") 5px no-repeat #0280FF;	
+}
+
+.userAuthRoleChangeButton{
+	width: 170px;
+	height: 30px;
+	color:white;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: 600;
+	border-radius: 5px;
+	box-sizing: border-box;
+	border: 2px solid #004c97;
+	background: url("/img/change.png") 5px no-repeat #004c97;
+	margin-top:10px;
+	padding-left:20px;	
+}
+
+.userAuthRoleChangeButton:hover{
+	border: 2px solid #0280FF;
+	background: url("/img/change.png") 5px no-repeat #0280FF;	
+}
+
+.userAuthRoleChangeSaveButton{
+	width: 210px;
+	height: 30px;
+	color:white;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: 600;
+	border-radius: 5px;
+	box-sizing: border-box;
+	border: 2px solid #004c97;
+	background: url("/img/save.png") 5px no-repeat #004c97;
+	margin-top:10px;
+	padding-left:20px;
+}
+
+.userAuthRoleChangeSaveButton:hover{
+	border: 2px solid #0280FF;
+	background: url("/img/save.png") 5px no-repeat #0280FF;	
+}
+
+.backNavButton{
+	width: 130px;
+	height: 30px;
+	color:white;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: 600;
+	border-radius: 5px;
+	box-sizing: border-box;
+	border: 2px solid #004c97;
+	background: url("/img/backNav.png") 5px no-repeat #004c97;
+	margin-top:10px;
+	margin-right: 10px;
+	padding-left:20px;	
+}
+
+.backNavButton:hover{
+	border: 2px solid #0280FF;
+	background: url("/img/backNav.png") 5px no-repeat #0280FF;	
+}
+
+.userAuthRoleDeleteButton{
+	width: 130px;
+	height: 30px;
+	color:white;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: 600;
+	border-radius: 5px;
+	box-sizing: border-box;
+	border: 2px solid #004c97;
+	background: url("/img/delete.png") 5px no-repeat #004c97;
+	margin-top:10px;
+	margin-left: 5px;
+	padding-left:20px;	
+}
+
+.userAuthRoleDeleteButton:hover{
+	border: 2px solid #0280FF;
+	background: url("/img/delete.png") 5px no-repeat #0280FF;		
+}

@@ -1,0 +1,554 @@
+
+h1 {
+	text-align: center;
+	color: #084c94;
+}
+
+body {
+	background-color: #e7f2fe;
+}
+
+.right {
+	height: 80%;
+	width: 50%;
+	float: right;
+}
+
+.left {
+	height: 80%;
+	width: 50%;
+	float: left;
+}
+
+.baseHeader {
+	background-color: white;
+	color: #084c94;
+	border-style: solid;
+	box-shadow: 10px 20px 15px silver;
+	font-size: 20px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+#pierothLogo {
+	width: 30%;
+	height: 30%;
+	margin-left: 35%;
+	margin-top: 20px;
+}
+
+.mainView {
+	background-color: white;
+	color: #084c94;
+	margin: auto;
+	width: 1100px;
+	border-style: solid;
+	box-shadow: 10px 20px 15px silver;
+}
+
+.mainView .viewBodyUserAuthRoleList {
+	margin-left: 20%;
+}
+
+.mainView .viewBodyUser {
+	margin-left: 15%;
+	height: 480px;
+}
+
+.viewHeader {
+	background-color: #084c94;
+	color: white;
+	float: top;
+	font-size: 20px;
+	text-align: center;
+	padding: 10px 0px;
+}
+
+.viewTable {
+	margin-top: 10px;
+	display: flex;
+}
+
+.viewButtons {
+	padding-top: 10px;
+	width: 100%;
+	display: flex;
+}
+
+.viewNav {
+	display: flex;
+}
+
+.viewFooter {
+	margin-top: 20px;
+	display: flex;
+}
+
+.text {
+	margin-top: 10px;
+	margin-left: 5px;
+}
+
+#viewLeasing {
+	display: flex;
+	overflow: hidden;
+}
+
+#viewVersicherung {
+	display: flex;
+	overflow: hidden;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.table tr:nth-child(even) {
+	background-color: #ddd;
+}
+
+.tableHeader {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #e7f2fe;
+}
+
+.table {
+	border: 1px solid #ddd;
+	padding: 8px;
+	width: 100%;
+}
+
+#headKFZ_ID {
+	width: 100px;
+}
+
+#headDatum {
+	width: 200px;
+}
+
+#viewAnhaenge, #viewSchaeden {
+	margin: auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	display: block;
+	height: 150px;
+	width: 750px;
+	border: 1px solid #084c94;
+	padding-bottom: 50px;
+	background-color: #e7f2fe;
+}
+
+.viewNotizen {
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+
+.anlagen {
+	padding: 5px;
+	padding-bottom: 0px;
+}
+
+.file {
+	max-width: 500px;
+	margin: 10px;
+	padding-right: 10px;
+	background-color: white;
+	position: absolute;
+	border-left: none;
+}
+
+.anlageButtons {
+	margin-right: 10px;
+	margin-left: 500px;
+	margin-top: 20px;
+}
+
+#addFileAnhaenge {
+	margin-top: 20px;
+}
+
+#deleteFileAnhaenge {
+	margin-top: 20px;
+}
+
+#addFileSchaeden {
+	margin-top: 20px;
+}
+
+#deleteFileSchaeden {
+	margin-top: 20px;
+}
+
+#submitAnhaenge {
+	margin-top: 20px;
+}
+
+#submitSchaeden {
+	margin-top: 20px;
+}
+
+.listFile {
+	padding-top: 5px;
+}
+
+.overflow {
+	max-height: 150px; /* Maximale Höhe für die Scroll-Funktion */
+	min-width: 400px;
+	margin: 20px;
+
+	position: absolute;
+    overflow-y: auto; /* Vertikales Scrollen aktivieren */
+    padding: 5px; /* Keine Innenabstände */
+    list-style-type: none; /* Listenstil entfernen */
+    border: 1px solid #ccc; /* Rahmen um die Liste */
+}
+
+#actionButtons {
+	align-items: center;
+	margin-top: 5px;
+}
+
+.confirmButtons {
+	float: right;
+	margin-top: 10px;
+	margin-right: 40px;
+}
+
+#suche {
+	margin-bottom: 10px;
+	font-size: 25px;
+}
+
+#fahrzeugKennzeichen {
+	position: absolute;
+	margin-left: 10px;
+}
+
+#inaktiveFahrzeuge {
+	float: right;
+	font-size: 15px;
+	margin-right: 50px;
+}
+
+.description {
+	float: left;
+	width: auto;
+	font-size: 20px;
+	margin-top: 5px;
+	margin-right: 5px;
+	position: static;
+}
+
+.value {
+	float: left;
+}
+
+#kfzID {
+	font-size: 15px;
+}
+
+#kfzID input {
+	margin-right: 20px;
+}
+
+#dropDownHersteller {
+	width: 200px;
+}
+
+#dropDownModell {
+	width: 200px;
+}
+
+#inputKFZ_ID {
+	margin-left: 10px;
+}
+
+.input {
+	margin-top: 13.5px;
+}
+
+.buttonNew {
+	background-color: #084c94;
+	color: white;
+	margin-left: 10px;
+	border-radius: 5px;
+}
+
+.buttonNew:hover {
+	background-color: #042549;
+}
+
+#fahrzeugInaktiv {
+	position: absolute;
+}
+
+#fahrzeugButton {
+	margin-left: 50px;
+	margin-top: 15px;
+}
+
+#inputPS {
+	margin-right: 5px;
+	width: 100px;
+}
+
+#inputKW {
+	margin-left: 25px;
+	margin-right: 5px;
+	width: 100px;
+}
+
+.Buttons {
+	background-color: #084c94;
+	color: white;
+	margin-left: 80px;
+	border-radius: 5px;
+	padding: 5px;
+	font-size: 15px;
+	margin: center;
+}
+
+.Buttons:hover {
+	background-color: #042549;
+}
+
+#arrowLeft {
+	margin-left: 80px;
+	font-size: 15px;
+}
+
+#arrowRight {
+	margin-left: 30px;
+	font-size: 15px;
+}
+
+#buttonLeasing {
+	color: #084c94;
+	background-color: white;
+	padding: 5px;
+	border-width: 1px;
+	border-radius: 3px;
+	border-color: #084c94;
+	margin-top: 10px;
+	border-bottom: none;
+}
+
+.footerButtons {
+	color: #084c94;
+	background-color: #e7f2fe;
+	padding: 5px;
+	border-width: 1px;
+	border-radius: 3px;
+	border-color: #084c94;
+	margin-top: 10px;
+}
+
+.footerButtons:hover {
+	background-color: #e7f2fe;
+}
+
+
+.line {
+	width: 100%;
+	border-bottom: 1px solid #084c94;
+}
+
+#sucheFahrer {
+	margin-left: 10px;
+}
+
+#sucheUebergabe {
+	font-size: 25px;
+}
+
+#inputUebergabe {
+	margin-left: 10px;
+}
+
+#uebergabeButton {
+	background-color: #6eb0f7;
+	color: white;
+	border-radius: 5px;
+	padding: 5px;
+	font-size: 15px;
+	margin: center;
+}
+
+#uebergabeButton:hover {
+	background-color: #042549;
+}
+
+.berichtButton {
+	background-color: #084c94;
+	color: white;
+	border-radius: 5px;
+	padding: 20px;
+	font-size: 30px;
+	margin: 20px;
+}
+
+.berichtButton:hover {
+	background-color: #042549;
+}
+
+.centerButton {
+	text-align: center;
+}
+
+.passwordHead {
+	background-color: #084c94;
+	color: white;
+}
+
+.password {
+	float: left;
+	width: 300px;
+	font-size: 20px;
+	margin-top: 20px;
+}
+
+.changePassword {
+	float: left;
+	color: white;
+	background-color: #084c94;
+	border-radius: 5px;
+	font-size: 20px;
+	width: 60%;
+	margin-left: 20%;
+	margin-top: 30px;
+	padding: 10px;
+}
+
+.changePassword:hover {
+	background-color:  #042549;
+}
+
+.loginContainer {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	background: white;
+	height: auto;
+	width: 400px;
+	border-radius: 10px;
+	box-shadow: 10px 10px 50px 10px grey;
+}
+
+.loginWrapper {
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
+.inputLabel {
+	margin-top: 10px;
+	font-size: 20px;
+	font-weight: 600;
+	display: flex;
+	flex-direction: column;
+}
+
+.inputField {
+	font-size: 16px;
+	border-radius: 2px;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	height: 30px;
+	width: 300px;
+	margin-bottom: 10px;
+}
+
+.formGroupButton {
+	width: auto;
+}
+
+.loginButton {
+	width: 100%;
+	height: 40px;
+	color: white;
+	cursor: pointer;
+	font-size: 20px;
+	font-weight: 500;
+	border-radius: 5px;
+	box-sizing: border-box;
+	border: 2px solid #004c97;
+	background: #004c97;
+	margin-bottom: 30px;
+}
+
+.inputFieldValError {
+	outline: none !important;
+	font-size: 16px;
+	border-radius: 2px;
+	background-color: #fef0f1;
+	box-sizing: border-box;
+	border: 1px solid #f25255;
+	height: 30px;
+	width: 100%;
+}
+
+.valError {
+	color: #f25255;
+	display: block;
+	padding: 2px;
+	border-radius: 2px;
+	background-color: #fef0f1;
+	border: 1px solid #f25255;
+	max-height: 100px;
+	width: 1100px;
+	margin: auto;
+	margin-bottom: 10px;
+	overflow-y: auto;
+}
+
+.inputValidationText {
+	color: red;
+	font-size: 15px;
+}
+
+#cancel {
+	display: none;
+}
+
+#save {
+	display: none;
+}
+
+#deleteCar {
+	display: none;
+}
+
+#textNote {
+	width: 600px;
+}
+
+.accountInfo {
+	float: left;
+	width: auto;
+	font-size: 20px;
+	margin: 20px;
+	position: static;
+}
+
+.inputAccount {
+	font-size: 15px;
+	height: 30px;
+	width: 300px;
+	margin-bottom: 10px;
+}
+
+#newNote {
+	width: 600px;
+}
+
+#newNoteLine {
+	display: none;	
+}
+
+#newNoteButton {
+	display: none;
+}
