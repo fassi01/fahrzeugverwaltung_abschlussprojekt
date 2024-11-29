@@ -5,10 +5,19 @@ use App\Libraries\ServerInfo;
 use App\Libraries\SiteAuth;
 use CodeIgniter\Controller;
 use CodeIgniter\CLI\Console;
+use CodeIgniter\HTTP\RedirectResponse;
 use FFI\Exception;
 
+/**
+ * @author fassbinderl
+ *
+ */
 class FahrzeugeVerwalten extends Controller
 {
+    
+	/**
+	 * Konstruktor
+	 */
 	public function __construct()
     {
         helper(['url', 'form']);
@@ -20,10 +29,13 @@ class FahrzeugeVerwalten extends Controller
         $session->set('htmlTitle', 'Fahrzeuge verwalten');
 	}
 	
+    /**
+     * @return \CodeIgniter\HTTP\RedirectResponse
+     */
     public function index()
     {
         
-        // Bie keiner Berechtigung auf die Fahrzeugverwaltung wird der Zugriff verweigert.
+        // Bei keiner Berechtigung auf die Fahrzeugverwaltung wird der Zugriff verweigert.
         if(SiteAuth::getPermissionLvl('MANAGE_FAHRZEUGE_VERWALTEN') == '0'){
             session()->setFlashdata('msgError', 'Zugriff verweigert. Zu niedriges Berechtigungslevel.');
             return redirect()->to('/?permissionError=true');
@@ -149,30 +161,45 @@ class FahrzeugeVerwalten extends Controller
 
     }
     
+    /**
+     * @return \CodeIgniter\HTTP\RedirectResponse
+     */
     public function changeSaveButton() {
         $kfzID = set_value('kfz_id');
         $url = '/FahrzeugeVerwalten?modus=change&action=changeSaveButton&kfz_id=' . $kfzID;
         return redirect()->to($url)->withInput();
     }
     
+    /**
+     * @return \CodeIgniter\HTTP\RedirectResponse
+     */
     public function insertSaveButton() {
         $url = '/FahrzeugeVerwalten?modus=insert&action=insertSaveButton';
         return redirect()->to($url)->withInput();
     }
     
+    /**
+     * @return \CodeIgniter\HTTP\RedirectResponse
+     */
     public function insertNoteButton() {
         $kfzID = set_value('kfz_id');
         $url = '/FahrzeugeVerwalten?modus=insert&action=insertNoteButton&kfz_id=' . $kfzID;
         return redirect()->to($url)->withInput();
     }
     
+    /**
+     * @return \CodeIgniter\HTTP\RedirectResponse
+     */
     public function deleteSaveButton() {
         $kfzID = set_value('kfz_id');        
         $url = '/FahrzeugeVerwalten?modus=delete&kfz_id=' . $kfzID;
         return redirect()->to($url)->withInput();
     }
 
-    // Den Anhängen wird eine Datei hinzugefügt
+    /** Den Anhängen wird eine Datei hinzugefügt
+     * 
+     * @return \CodeIgniter\HTTP\RedirectResponse
+     */
     public function addFileAnhaenge() {
         
         $kfzID = set_value('hiddenKFZ_IDAnhaenge');        
@@ -188,7 +215,10 @@ class FahrzeugeVerwalten extends Controller
         return redirect()->to($url)->withInput();
     }
     
-    // Aus den Anhängen wird eine Datei gelöscht.
+    /** Aus den Anhängen wird eine Datei gelöscht.
+     * 
+     * @return \CodeIgniter\HTTP\RedirectResponse
+     */
     public function deleteFileAnhaenge() {
         
         $kfzID = set_value('hiddenKFZ_IDAnhaenge');
@@ -205,7 +235,9 @@ class FahrzeugeVerwalten extends Controller
         return redirect()->to($url)->withInput();
     }
     
-    // Den Schäden wird eine Datei hinzugefügt.
+    /** Den Schäden wird eine Datei hinzugefügt.
+     * @return \CodeIgniter\HTTP\RedirectResponse
+     */
     public function addFileSchaeden() {
         
         $kfzID = set_value('hiddenKFZ_IDSchaeden');
@@ -221,7 +253,9 @@ class FahrzeugeVerwalten extends Controller
         return redirect()->to($url)->withInput();
     }
     
-    // Aus den Schäden wird eine Datei gelöscht.
+    /** Aus den Schäden wird eine Datei gelöscht.
+     * @return \CodeIgniter\HTTP\RedirectResponse
+     */
     public function deleteFileSchaeden() {
         
         $kfzID = set_value('hiddenKFZ_IDSchaeden');
@@ -238,7 +272,10 @@ class FahrzeugeVerwalten extends Controller
         return redirect()->to($url)->withInput();
     }
     
-    // Die View wird mit neuen Inhalten neu geladen.
+    /** Die View wird mit neuen Inhalten neu geladen.
+     * 
+     * @param $viewData
+     */
     private function showView($viewData) {
         
         echo view('templates/header');
@@ -247,8 +284,10 @@ class FahrzeugeVerwalten extends Controller
         echo view('templates/footer');
     }
     
-    // Alle Dropdown Felder haben ihre eigene Tabelle.
-    // Diese Tabellen werden in ein großes Array geschreiben und an die View übergeben.
+    /** Alle Dropdown Felder haben ihre eigene Tabelle.
+     * Diese Tabellen werden in ein großes Array geschreiben und an die View übergeben.
+     * @return array[] $allData
+     */
     private function getAllData(){
         
         $allData = [
@@ -272,7 +311,11 @@ class FahrzeugeVerwalten extends Controller
         return $allData;
     }
     
-    // Eine Tabelle wird anhand des Namens ausgelesen und als Array zurückgegeben. 
+    /** Eine Tabelle wird anhand des Namens ausgelesen und als Array zurückgegeben. 
+     * 
+     * @param $table
+     * @return array[]
+     */
     private function getTableByName($table){
         $dbGroup = ServerInfo::getDbGroup();
         $db1 = \Config\Database::connect($dbGroup);
@@ -295,8 +338,11 @@ class FahrzeugeVerwalten extends Controller
         return $tableArray;
     }
     
-    // Die Fahrzeugdaten werden aus der View gelesen, auf Validierungsfehler überprüft und in einem Array zurückgegeben.
-    // Zahlen und Datum-Felder werden bei leerem Inhalt auf NULL gesetzt.
+    /** Die Fahrzeugdaten werden aus der View gelesen, auf Validierungsfehler überprüft und in einem Array zurückgegeben.
+     *  Zahlen und Datum-Felder werden bei leerem Inhalt auf NULL gesetzt.
+     * 
+     * @return array[]
+     */
     private function getFahrzeugData(){
         
         $kennzeichen = old('kennzeichen');
@@ -319,9 +365,7 @@ class FahrzeugeVerwalten extends Controller
         $besitzer = old('dropDownBesitzer');
         $innenauftrag = old('innenauftrag');
         $activity = (int)old('activity');
-        
-        echo $naechsteHU;
-        
+                
         $valData = array(            
             'Kennzeichen' => $kennzeichen,
             'Hersteller' => $hersteller,
@@ -390,8 +434,12 @@ class FahrzeugeVerwalten extends Controller
         return $updateData;        
     }
     
-    // Die Leasingdaten werden aus der View gelesen, auf Validierungsfehler überprüft und in einem Array zurückgegeben.
-    // Zahlen und Datum-Felder werden bei leerem Inhalt auf NULL gesetzt.
+
+    /** Die Leasingdaten werden aus der View gelesen, auf Validierungsfehler überprüft und in einem Array zurückgegeben.
+     *  Zahlen und Datum-Felder werden bei leerem Inhalt auf NULL gesetzt.
+     *  
+     * @return array[]
+     */
     private function getLeasingData(){
         
         $leasingGeber = old('dropDownLeasinggeber');
@@ -468,9 +516,13 @@ class FahrzeugeVerwalten extends Controller
         return $leasing;
     }
     
-    // Die Leasingdaten werden aus der View gelesen, auf Validierungsfehler überprüft und in einem Array zurückgegeben.
-    // Zahlen und Datum-Felder werden bei leerem Inhalt auf NULL gesetzt.
+    /** Die Leasingdaten werden aus der View gelesen, auf Validierungsfehler überprüft und in einem Array zurückgegeben.
+     *  Zahlen und Datum-Felder werden bei leerem Inhalt auf NULL gesetzt.
+     * 
+     * @return array[]
+     */
     private function getVersicherungData(){
+        
         $versicherungGeber = old('dropDownVersicherunggeber');
         $versicherungNehmer = old('dropDownVersicherungnehmer');
         $versicherungSchein = old('versicherungSchein');
@@ -523,7 +575,9 @@ class FahrzeugeVerwalten extends Controller
         return $versicherung;
     }
     
-    // Die Notizen werden aus der View gelesen um sie anschließend zu updaten
+    /** Die Notizen werden aus der View gelesen um sie anschließend zu updaten
+     * @return NULL|array[]
+     */
     private function getNotizenData(){
         $notizen_KFZ_ID = old('notizen_kfz_id');
         $notizenDatum = old('notizen_datum');
@@ -564,9 +618,11 @@ class FahrzeugeVerwalten extends Controller
    
         return $notizenArray;
     }
-    
-    // Ein Fahrzeug kann mehrere Notizen haben.
-    // Diese Funktion gib ein Array mit allen Notiz_IDs zurück die das Fahrzeug hat. 
+
+    /** Ein Fahrzeug kann mehrere Notizen haben.
+     *  Diese Funktion gib ein Array mit allen Notiz_IDs zurück die das Fahrzeug hat. 
+     * @return NULL|array[]
+     */
     private function getNotizenIDs(){
         $notizenID = old('notizen_id');
         $noteArray = [];
@@ -579,7 +635,10 @@ class FahrzeugeVerwalten extends Controller
         return $noteArray;
     }
     
-    // Fahrzeug wird geupdated
+    /** Fahrzeug wird geupdated
+     * @param $kfzID
+     * @return boolean
+     */
     private function updateFahrzeug($kfzID){
                 
         $updateData = $this->getFahrzeugData();
@@ -652,7 +711,12 @@ class FahrzeugeVerwalten extends Controller
         
     }
     
-    // Ein neues Fahrzeug wird erstellt. 
+    /** Ein neues Fahrzeug wird erstellt. 
+     *  Durch die Rückgabe der kfzID kann das erstellte Fahrzeug direkt angezeigt werden.
+     *  Konnte kein Fahrzeug erstellt werden wird 0 zurückgegeben 
+     * 
+     * @return number
+     */
     private function insertFahrzeug(){
         $updateData = $this->getFahrzeugData();
         $versicherung = $this->getVersicherungData();
@@ -699,7 +763,7 @@ class FahrzeugeVerwalten extends Controller
             $builder->insert($updateData);
             $kfzID = $db1->insertID();
             
-            // Zuletzt wird dan der Eintrag in der Notizen-Tabelle eingetragen, da diese auf die KFZ-ID in der Fahrzeug-Tabelle referenziert. 
+            // Zuletzt wird der Eintrag in der Notizen-Tabelle eingetragen, da diese auf die KFZ-ID in der Fahrzeug-Tabelle referenziert. 
             $notizenArray   = $builder->get();
             $notizenRow = $notizenArray->getLastRow('array');
             $newNote = array_merge($newNote, ["notizen_kfz_id" => $notizenRow['kfz_id']]);
@@ -712,7 +776,7 @@ class FahrzeugeVerwalten extends Controller
                 return 0;
             } else {
                 
-                // Wenn das Fahrzeug erfolgreich angelegt wurde werden auch die Ordner angelegt
+                // Wenn das Fahrzeug erfolgreich angelegt wurde, werden auch die Ordner angelegt
                 $path = 'Anhaenge/' . $kfzID;
                 if(mkdir($path, 777, true));
                 else;
@@ -727,11 +791,13 @@ class FahrzeugeVerwalten extends Controller
             return 0;
         }
         session()->setFlashdata('OK', 'Das Fahrzeug wurde erfolgreich angelegt.');
-        // Die ID wird zurückgegeben um direkt das Fahrzeug anzuzeigen
+        // Die ID wird zurückgegeben, um direkt das Fahrzeug anzuzeigen
         return $kfzID;
     }
     
-    // Ein Fahrzeug wird gelöscht.
+    /** Ein Fahrzeug wird gelöscht.
+     * @param $kfzID
+     */
     private function deleteFahrzeug($kfzID){
         $dbGroup = ServerInfo::getDbGroup();
         $db1 = \Config\Database::connect($dbGroup);
@@ -762,7 +828,10 @@ class FahrzeugeVerwalten extends Controller
         session()->setFlashdata('OK', 'Das Fahrzeug wurde erfolgreich gelöscht.');
     }
     
-    // Die Einträge aus einer neuen Notiz werden aus der View gelesen und in einem Array zurückgegeben.
+    /** Die Einträge aus einer neuen Notiz werden aus der View gelesen und in einem Array zurückgegeben.
+     * 
+     * @return array[]
+     */
     private function getNewNote(){
         $kfzID = old('hidden_kfz_id');
         $notizenDatum = old('noteDate');
@@ -798,7 +867,10 @@ class FahrzeugeVerwalten extends Controller
         return $notizenArray;
     }
     
-    // Eine neue Notiz wird einem Fahrzeug hinzugefügt.
+    /** Eine neue Notiz wird einem Fahrzeug hinzugefügt.
+     * 
+     * @return boolean
+     */
     private function insertNote(){
         
         $newNote = $this->getNewNote();
@@ -826,9 +898,13 @@ class FahrzeugeVerwalten extends Controller
         return true;
     }
     
-    // In dieser Funktion werden alle Felder aus der View mit einem leeren Wert gefüllt, 
-    // der dann standardmäßig angezeigt wird.
-    // Wird ein Array ohne keys übergeben kommt es in der View zu Fehlerlmeldungen.
+    
+    /** In dieser Funktion werden alle Felder aus der View mit einem leeren Wert gefüllt, 
+     *  der dann standardmäßig angezeigt wird.
+     *  Wird ein Array ohne keys übergeben kommt es in der View zu Fehlerlmeldungen.
+     * 
+     * @return string[]|number[]|array[]
+     */
     private function getFahrzeugRaw() {
         
         $fahrerRaw = [
@@ -909,14 +985,17 @@ class FahrzeugeVerwalten extends Controller
         return $fahrerRaw;
     }
     
-    // Die Daten eines Fahrzeugs werden anhand der KFZ-ID in einem Array zurückgegebn.
+    /** Die Daten eines Fahrzeugs werden anhand der KFZ-ID in einem Array zurückgegebn.
+     * @param $kfzID
+     * @return array
+     */
     private function getFahrzeugByID($kfzID) {
         
         $dbGroup = ServerInfo::getDbGroup();
         $db1 = \Config\Database::connect($dbGroup);
         $builder1 = $db1->table('t_fahrzeuge');
         
-        // Alles Joins werden in einem Array gesammelt.
+        // Alle Joins werden in einem Array gesammelt.
         $joins = [
             't_hersteller' => 't_hersteller.hersteller_id = t_fahrzeuge.hersteller_id',
             't_modell' => 't_modell.modell_id = t_fahrzeuge.modell_id',
@@ -947,7 +1026,7 @@ class FahrzeugeVerwalten extends Controller
         // Der builder beschränkt sich nur auf die ausgewählte KFZ-ID
         $builder1->where('kfz_id', $kfzID);
         $fahrzeug = $builder1->get();
-        // Zurück kommt ein Array mit der entsprechenden Key-Value zuweisung auf einer Ebene sind.
+        // Zurück kommt ein Array mit der entsprechenden Key-Value Zuweisung.
         $fahrzeugArray = $fahrzeug->getRowArray();      
         
         // Das Feld wird neu formatiert, damit nur Jahr und Monat angezeigt werden. Dafür werden nur die ersten 7 Zeichen gebraucht. 
@@ -964,10 +1043,12 @@ class FahrzeugeVerwalten extends Controller
         ]);
                 
         return $fahrzeugArray;
-        
     }
     
-    // Für das Suchfeld werden alle Kennzeichen mit ID aus der Datenbank gelesen und zurückgegeben.
+    /** Für das Suchfeld werden alle Kennzeichen mit ID aus der Datenbank gelesen und zurückgegeben.
+     * 
+     * @return array[]
+     */
     private function getKennzeichen() {
         
         $dbGroup = ServerInfo::getDbGroup();
@@ -998,7 +1079,11 @@ class FahrzeugeVerwalten extends Controller
         
     }
     
-    // Die KFZ-ID des nächsten Fahrzeugs aus der Datenbank wird zurückgegeben.
+    /** Die KFZ-ID des nächsten Fahrzeugs aus der Datenbank wird zurückgegeben.
+     * 
+     * @param $kfzID
+     * @return $kfzID
+     */
     private function getNextID($kfzID) {
         
         $fahrzeuge = $this->getKennzeichen();
@@ -1016,7 +1101,11 @@ class FahrzeugeVerwalten extends Controller
 
     }
     
-    // Die KFZ-ID des vorherigen Fahrzeugs aus der Datenbank wird zurückgegeben.
+    /** Die KFZ-ID des vorherigen Fahrzeugs aus der Datenbank wird zurückgegeben.
+     * 
+     * @param $kfzID
+     * @return $kfzID
+     */
     private function getFormerID($kfzID) {
         
         $fahrzeuge = $this->getKennzeichen();

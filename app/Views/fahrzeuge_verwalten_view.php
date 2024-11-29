@@ -67,7 +67,7 @@ if($valError):?>
 		    ?>
 		    <select name="dropDownHersteller" id="dropDownHersteller" class="input">
                 <?php
-                /*Die Schleife vergliecht heden Hersteller aus dem Array mitd der ID, dia ausgewählt wurde.
+                /*Die Schleife vergleicht jeden Hersteller aus dem Array mit der ID, die ausgewählt wurde.
                  * Demzufolge wird dann auch der Hersteller in der Anwendung angezeigt.*/
                 foreach($allData['hersteller'] as $hersteller) {
                     $selected = ($fahrzeug['hersteller_id'] == $hersteller['hersteller_id']) ? 'selected' : '';
